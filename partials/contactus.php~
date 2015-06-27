@@ -1,0 +1,36 @@
+
+
+
+<!-- =========================
+     SECTION CONTACTS
+============================== -->
+<section class="contacts">
+	<div class="container">
+		<div class="row">
+			
+			<!-- LEFT CONTACTS -->
+			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 contact-1">
+				<h2 class="border-bottom">Our contacts</h2>
+				<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.</p>
+				<div class="contact-item"><div class="cont-icon"><div><i class="fa fa-map-marker"></i></div></div>Los Angeles, United States of America</div>
+				<div class="contact-item"><div class="cont-icon"><div><i class="fa fa-phone"></i></div></div>+4(111)111-1111</div>
+				<div class="contact-item"><div class="cont-icon"><div><i class="fa fa-envelope"></i></div></div>duka@duka.com</div>
+			</div>
+			
+			<!-- RIGHT CONTACTS -->
+			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 contact-2">
+				<h2 class="border-bottom">Get in touch</h2>
+				<div class="send-result"></div>
+				<form name="bottom-form" id="bottom-form" method="POST" action="javascript:void(null);" onsubmit="sendmail();">
+					<div class="col-md-4"><input type="text" name="name" placeholder="Your name.." /></div>
+					<div class="col-md-4"><input type="text" name="phone" placeholder="Your phone.." /></div>
+					<div class="col-md-4"><input type="text" name="email" placeholder="Your email.." /></div>
+					<div class="col-md-12"><textarea name="message" placeholder="Your message.."></textarea></div>
+					<div class="col-md-12"><button class="btn btn-primary">Send message</button></div>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</section>
+	

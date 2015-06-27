@@ -1,0 +1,79 @@
+/*“use strict” mode on*/
+"use strict";
+
+$(window).on('load', function () {
+	
+	/*=== Pre loader slide up ====*/
+	$('#preloader').slideUp();
+	
+	var feature_1_left_bg = $('#feature1-left-bg');
+	var feature_2_left_bg = $('#feature2-left-bg');
+	var feature_3_left_bg = $('#feature3-left-bg');
+	var feature_4_left_bg = $('#feature4-left-bg');
+	
+	var feature_1 = $("#feature1");
+	var feature_2 = $("#feature2");
+	var feature_3 = $("#feature3");
+	var feature_4 = $("#feature4");
+	
+	/*=== Border width resize for features sections ====*/
+	feature_1_left_bg.css('border-top-width', feature_1.innerHeight() + 'px');
+	feature_1.css('height', feature_1.innerHeight() + 1 + 'px'); // for firefox inner height fixed
+	feature_2_left_bg.css('border-bottom-width', feature_2.innerHeight() + 'px');
+	feature_2.css('height', feature_2.innerHeight() + 1 + 'px'); // for firefox inner height fixed
+	feature_3_left_bg.css('border-top-width', feature_3.innerHeight() + 'px');
+	feature_3.css('height', feature_3.innerHeight() + 1 + 'px'); // for firefox inner height fixed
+	feature_4_left_bg.css('border-bottom-width', feature_4.innerHeight() + 'px');
+	feature_4.css('height', feature_4.innerHeight() + 'px'); // for firefox inner height fixed
+	
+	$(window).on('resize', function () {
+		
+		/*=== Border width resize for features sections at resize window ====*/	
+		feature_1.css('height', '');
+		feature_1_left_bg.css('border-top-width', feature_1.innerHeight() + 'px');
+		feature_2.css('height', '');
+		feature_2_left_bg.css('border-bottom-width', feature_2.innerHeight() + 'px');
+		feature_3.css('height', '');
+		feature_3_left_bg.css('border-top-width', feature_3.innerHeight() + 'px');
+		feature_4.css('height', '');
+		feature_4_left_bg.css('border-bottom-width', feature_4.innerHeight() + 'px');
+		
+		/*=== Stellar.js parallax plugin init at resize window ====*/
+		$.stellar();
+	});
+	
+	/*=== Isotope portfolio init ====*/		
+	var $grid = $('#portfolio-items').isotope({
+		itemSelector: '.portfolio-item',
+		layoutMode: 'fitRows'
+	});
+	
+	/*=== Bind isotope filter button click ====*/		
+	$('#filter').on( 'click', 'a', function() {
+		var filterValue = $( this ).attr('data-filter');
+
+		$grid.isotope({ filter: filterValue });
+		
+		$('#filter a').removeClass('active');
+		$( this ).addClass('active');
+		
+		return false;
+		
+	});
+	
+});
+
+
+/*=== Send message bottom contact form ====*/
+function sendmail() {
+	var fields = $('#bottom-form').serialize();
+	$.ajax({
+		type: 'POST',
+		url: 'sendmail.php',
+		data: fields,
+		success: function(data) {
+			$('.send-result').html(data);
+		}
+	});
+}
+
